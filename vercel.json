@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/v1", "destination": "/api/nexus?route=/v1" },
+    { "source": "/v1/:path*", "destination": "/api/nexus?route=/v1/:path*" },
+    { "source": "/api/scan", "destination": "/api/nexus?route=/api/scan" },
+    { "source": "/api/job", "destination": "/api/nexus?route=/api/job" },
+    { "source": "/api/video-models", "destination": "/api/nexus?route=/api/video-models" },
+    { "source": "/docs", "destination": "/docs.html" }
+  ]
+}

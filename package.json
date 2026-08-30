@@ -1,0 +1,8 @@
+{
+  "name": "nexus-open-models",
+  "private": true,
+  "description": "Nexus workbench and public API for free open-model endpoints",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
