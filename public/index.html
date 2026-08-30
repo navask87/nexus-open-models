@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexus — multi-agent workbench</title>
+  <meta property="og:image" content="/og.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div>
+        <p class="kicker">Command floor</p>
+        <h1>Nexus</h1>
+      </div>
+      <div class="status"><a href="/docs">API</a> · <span id="status">scanning…</span></div>
+    </header>
+    <aside class="rail" id="rail"></aside>
+    <main>
+      <section class="composer">
+        <div class="drop" id="drop">
+          <input id="still" class="file-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif" />
+          <label class="drop-inner" id="dropInner" for="still">
+            <p class="drop-title">Upload a still</p>
+            <p class="drop-sub">JPG, PNG, WebP, GIF · this is frame 0</p>
+            <span class="pick">Browse image</span>
+          </label>
+          <div class="preview" id="preview" hidden>
+            <img id="previewImg" alt="Start frame" />
+            <div class="preview-meta">
+              <strong id="previewName">still</strong>
+              <span id="previewSize"></span>
+              <div class="preview-actions">
+                <label class="ghost" for="still">Replace</label>
+                <button type="button" class="ghost" id="clearStill">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <textarea id="prompt" rows="3" placeholder="How should it move? e.g. slow dolly-in"></textarea>
+        <div class="row">
+          <label class="browse-btn" for="still">Browse image</label>
+          <input id="imageUrl" type="url" placeholder="Or paste a start-frame URL" />
+          <select id="videoModel">
+            <option value="wan">wan</option>
+            <option value="wan-fast">wan-fast</option>
+            <option value="p-video">p-video</option>
+          </select>
+          <input id="key" type="password" placeholder="Pollinations key (optional)" />
+          <button id="go" type="button">Make video</button>
+        </div>
+      </section>
+      <section class="feed" id="feed"></section>
+    </main>
+    <aside class="catalog">
+      <p class="kicker">Live catalog</p>
+      <h2>Endpoints</h2>
+      <div id="catalogList"></div>
+    </aside>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

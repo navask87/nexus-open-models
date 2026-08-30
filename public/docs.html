@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexus API</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #111; }
+    h1 { font-weight: 600; }
+    pre, code { background: #f4f1ea; border-radius: 8px; }
+    pre { padding: 14px; overflow: auto; }
+    code { padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <h1>Nexus Open Models API</h1>
+  <p>Base path <code>/v1</code>. CORS is open. Optional <code>Authorization: Bearer pk_…</code>.</p>
+  <h2>List models</h2>
+  <pre>curl https://YOUR-PROJECT.vercel.app/v1/models</pre>
+  <h2>Image</h2>
+  <pre>curl -s https://YOUR-PROJECT.vercel.app/v1/images/generations \
+  -H 'Content-Type: application/json' \
+  -d '{"prompt":"watercolor radio telescope at dusk"}'</pre>
+  <h2>Video</h2>
+  <pre>curl -s https://YOUR-PROJECT.vercel.app/v1/videos \
+  -H 'Content-Type: application/json' \
+  -d '{"prompt":"slow dolly-in","image_url":"https://example.com/still.jpg"}'</pre>
+  <h2>Chat</h2>
+  <pre>curl -s https://YOUR-PROJECT.vercel.app/v1/chat/completions \
+  -H 'Content-Type: application/json' \
+  -d '{"model":"openai","messages":[{"role":"user","content":"Hello"}]}'</pre>
+</body>
+</html>
